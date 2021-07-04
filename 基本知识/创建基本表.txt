@@ -1,6 +1,12 @@
+阅读
 CREATE TABLE guestroom(rno CHAR(6) NOT NULL UNIQUE,rtype CHAR(20),rprice INT)
 新建一个名为 guestroom（客房）的基本表，表中含有 rno(房间编号),rtype(房间类型),rprice(房间价格)三个属性。
 数据类型：CHAR(size) 	保存固定长度的字符串（可包含字母、数字以及特殊字符）。在括号中指定字符串的长度。最多 255 个字符。如：CHAR(6) 意为定义该属性值可填入6个及以内的字母、数字以及特殊字符
 数据类型：INT(size) 	-2147483648 到 2147483647 常规。0 到 4294967295 无符号*。在括号中规定最大位数。如：INT 意为只允许输入整数
 NOT NULL 属性不可为空
 UNIQUE 属性值唯一
+
+练习题
+1. 创建如下基本表，要求顾客编号限制在6个字符及以内，不可空且唯一；年龄只可输入整数；电话只可输入整数并在11位及以内
+   顾客(顾客编号,顾客姓名,年龄,电话)
+答案：CREATE TABLE guest(gno CHAR(6) NOT NULL UNIQUE,gname,gage INT(3),gphone INT(11))
