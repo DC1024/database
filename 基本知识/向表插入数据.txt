@@ -2,3 +2,8 @@
 0.向客房表(guestroom)增加数据，房间编号为0001，房间类型为normal，价格为120.
   INSERT INTO guestroom VALUES('0001','normal','120')
 插入语句一般格式：INSERT INTO 表名 VALUES('插入值1','插入值2','插入值3')
+
+1.插入每次入住天数大于5天的顾客信息
+  标准答案:INSERT INTO guest VALUES('00001','Mr.5','55','55555555555')       ————向guest表中，插入顾客编号为00001，顾客姓名为Mr.5，年龄55，电话号码为55555555555的信息
+          INSERT INTO guestroom VALUES('5555','toplevel','5555')            ————向guestroom表中，插入房间编号为5555，房间类型为toplevel，价格为5555的信息
+          INSERT INTO checkin VALUES('5555','00001','2005.5.5','6')         ————向checkin表中，插入房间编号为5555，顾客编号为00001，入住日期为2005.5.5，入住天数为6天的信息
