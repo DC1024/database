@@ -10,7 +10,7 @@ CREATE TABLE guestroom(rno CHAR(6) NOT NULL UNIQUE,rtype CHAR(20),rprice INT,PRI
      https://www.w3school.com.cn/sql/sql_primarykey.asp
      
 PS：1.属性必须定义数据类型;不建议使用ACCESS进行练习
-    2.如诺使用phpMyAdmin进行练习，请使用最新版本，旧版本默认存储引擎为MyISAM，无法进行外键设置。最新版本默认存储引擎为InnoDB
+    2.存储引擎MyISAM，无法进行外键设置。请将存储引擎设置为InnoDB
 
 练习题
 1. 创建如下基本表，要求顾客编号限制在6个字符及以内，不可空且唯一；年龄，电话只可输入整数
