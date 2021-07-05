@@ -1,0 +1,4 @@
+教程：
+0.向客房表(guestroom)增加数据，房间编号为0001，房间类型为normal，价格为120.
+  INSERT INTO guestroom VALUES('0001','normal','120')
+插入语句一般格式：INSERT INTO 表名 VALUES('插入值1','插入值2','插入值3')
