@@ -1,4 +1,4 @@
 教程：
 0.查询每次入住天数大于5天的顾客姓名和电话
   需要用到的属性：入住天数days，顾客姓名gname，电话gphone
-  SELECT gname,gphone,days FROM guest,checkin where days>5
+  SELECT gname,gphone,days FROM guest,checkin where guest.gno=checkin.gno AND days>5
