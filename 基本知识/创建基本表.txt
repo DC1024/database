@@ -10,7 +10,7 @@ CREATE TABLE guestroom(rno CHAR(6) NOT NULL UNIQUE,rtype CHAR(20),rprice INT,PRI
      https://www.w3school.com.cn/sql/sql_primarykey.asp
      
 PS：1.属性必须定义数据类型;不建议使用ACCESS进行练习
-    2.请注意使用phpMyAdmin进行练习时，如果找不到关联视图，请在表操作内，将存储引擎改为InnoDB
+    2.请注意使用phpMyAdmin进行练习设置外键时，需要将主键与外键各自的表的存储引擎改为InnoDB，默认的MyISAM无法设置外键
 
 练习题
 1. 创建如下基本表，要求顾客编号限制在6个字符及以内，不可空且唯一；年龄，电话只可输入整数
@@ -26,13 +26,3 @@ PS：1.属性必须定义数据类型;不建议使用ACCESS进行练习
    入住(房间编号,顾客编号,入住日期,入住天数)
    标准答案：CREATE TABLE checkin(rno CHAR(6),gno CHAR(6),day CHAR(10),days INT,FOREIGN KEY (rno) REFERENCES guestroom(rno),FOREIGN KEY (gno) REFERENCES guest(gno))
    
-MySQL:
-
-CREATE TABLE Orders
-(
-Id_O int NOT NULL,
-OrderNo int NOT NULL,
-Id_P int,
-PRIMARY KEY (Id_O),
-FOREIGN KEY (Id_P) REFERENCES Persons(Id_P)
-)
