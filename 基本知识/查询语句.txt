@@ -15,3 +15,7 @@
   答案：SELECT product.pno,pname,buyfrom FROM product,buy WHERE product.pno=buy.pno AND buysize>500
   解析：SELECT product.pno,pname,buyfrom 中的product.pno的意思是指定product表中的pno属性，因为buy表中也有pno属性，而我们又在查询指令中调取了buy表，所以需要指定，否则计算机无法理解
        WHERE product.pno=buy.pno AND buysize>500.同上题解析
+       
+3.查询每种商品累计采购的情况，包括商品编号，商品名称，总数量和总金额.
+  答案
+  解析：这题比较难，我们需要将得到的同类商品的采购情况累计，可以考虑使用GROUP BY语句
