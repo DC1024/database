@@ -7,4 +7,6 @@
 解析：where guest.gno=checkin.gno 是为了筛选出guest表中的gno属性与checkin表中gno属性一致的值出来，也就是只留下有入住记录的顾客姓名与电话，否则没有入住记录的顾客也会被筛选出来
 
 1.查询没有被使用过的房间编号（使用子查询）
+　子查询或称内查询、嵌套查询，是一种嵌套在其他 SQL 查询的 WHERE 子句中的查询。
   答案:SELECT rno FROM guestroom where guestroom.rno NOT IN (SELECT rno FROM checkin)
+  解析： where guestroom.rno NOT IN (SELECT rno FROM checkin)  筛选客房表中的rno属性不在（入住表中的rno属性）的值
