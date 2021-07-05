@@ -8,5 +8,10 @@
 
 1.查询没有被使用过的房间编号（使用子查询）（此题目可使用sqlfile/01.sql文件进行练习）
 　子查询或称内查询、嵌套查询，是一种嵌套在其他 SQL 查询的 WHERE 子句中的查询。
-  答案:SELECT rno FROM guestroom where guestroom.rno NOT IN (SELECT rno FROM checkin)
-  解析： where guestroom.rno NOT IN (SELECT rno FROM checkin)  筛选客房表中的rno属性不在（入住表中的rno属性）的值
+  答案:SELECT rno FROM guestroom where rno NOT IN (SELECT rno FROM checkin)
+  解析： where rno NOT IN (SELECT rno FROM checkin)  筛选客房表中的rno属性不在（入住表中的rno属性）的值
+
+2.查询单次采购数量大于500的商品编号，商品名称和供货商。（此题目可使用sqlfile/02.sql文件进行练习）
+  答案：SELECT product.pno,pname,buyfrom FROM product,buy WHERE product.pno=buy.pno AND buysize>500
+  解析：SELECT product.pno,pname,buyfrom 中的product.pno的意思是指定product表中的pno属性，因为buy表中也有pno属性，而我们又在查询指令中调取了buy表，所以需要指定，否则计算机无法理解
+       WHERE product.pno=buy.pno AND buysize>500.同上题解析
