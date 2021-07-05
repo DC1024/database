@@ -1,0 +1,6 @@
+教程
+定义：视图是指，将一个或多个基本表（或视图）中的数据，汇总到一起，形成一张虚表。也就是说，视图表中的数据实际上仍保存在各自的基本表中
+
+0.建立视图V_VIEW:2017年12月1日后入住的所有顾客的姓名、房间类型、入住天数
+  答案:CREATE VIEW V_VIEW AS SELECT guest.gname,guestroom.rtype,days FROM guestroom,guest,checkin WHERE guest.gno=checkin.gno AND guestroom.rno=checkin.rno AND day>20171201
+  入住表里有房间编号和顾客编号两个属性，我们筛选它，得出WHERE guest.gno=checkin.gno AND guestroom.rno=checkin.rno AND day>20171201
