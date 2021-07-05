@@ -1,11 +1,13 @@
 教程：
 CREATE TABLE guestroom(rno CHAR(6) NOT NULL UNIQUE,rtype CHAR(20),rprice INT,PRIMARY KEY (rno))
-新建一个名为 guestroom（客房）的基本表，表中含有 rno(房间编号),rtype(房间类型),rprice(房间价格)三个属性。
+新建一个名为 guestroom（客房）的基本表，表中含有 rno(房间编号),rtype(房间类型),rprice(房间价格)三个属性。并设置主键为rno
 
 数据类型：CHAR(size) 	保存固定长度的字符串（可包含字母、数字以及特殊字符）。在括号中指定字符串的长度。最多 255 个字符。如：CHAR(6) 意为定义该属性值可填入6个及以内的字母、数字以及特殊字符
 数据类型：INT.允许从 -2,147,483,648 到 2,147,483,647 的所有数字（整数）
 约束：NOT NULL.属性不可为空
 约束：UNIQUE.属性值唯一
+约束：PRIMARY KEY (rno).设定rno为主键
+     https://www.w3school.com.cn/sql/sql_primarykey.asp
 PS：属性必须定义数据类型;不建议使用ACCESS进行练习
 
 练习题
@@ -16,6 +18,7 @@ PS：属性必须定义数据类型;不建议使用ACCESS进行练习
 1U.创建如下基本表，要求顾客编号限制在6个字符及以内，不可空且唯一；年龄只可输入整数；电话只可输入整数并在11位及以内.并设置主键
    顾客(顾客编号,顾客姓名,年龄,电话,)
    进阶答案：CREATE TABLE guest(gno CHAR(6) NOT NULL UNIQUE,gname CHAR(6),gage decimal(3,0),gphone decimal(11,0),PRIMARY KEY (gno))
+   
 数据类型：decimal(p,s).固定精度和比例的数字。允许从 -10^38 +1 到 10^38 -1 之间的数字。p 参数指示可以存储的最大位数（小数点左侧和右侧）。p 必须是 1 到 38 之间的值。默认是 18。s 参数指示小数点右侧存储的最大位数。s 必须是 0 到 p 之间的值。默认是 0。如decimal(11,0)，意为可输入至数字11，可输入小数点至0（即为无）
 
 2.创建如下基本表，要求
