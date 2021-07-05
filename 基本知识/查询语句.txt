@@ -1,12 +1,12 @@
 教程：
-0.查询每次入住天数大于5天的顾客姓名和电话
+0.查询每次入住天数大于5天的顾客姓名和电话（此题目可使用sqlfile/01.sql文件进行练习）
   需要用到的属性：入住天数days，顾客姓名gname，电话gphone
   SELECT gname,gphone,days FROM guest,checkin where guest.gno=checkin.gno AND days>5
 查询一般语句：SELECT 查询的属性1,查询的属性2,或使用星号查询全部属性 FROM 查询的表1,查询的表2
 筛选查询：SELECT 查询的属性1,查询的属性2,或使用星号查询全部属性 FROM 查询的表1,查询的表2 WHENE 表.属性的值=表2属性的值 AND 属性>5
 解析：where guest.gno=checkin.gno 是为了筛选出guest表中的gno属性与checkin表中gno属性一致的值出来，也就是只留下有入住记录的顾客姓名与电话，否则没有入住记录的顾客也会被筛选出来
 
-1.查询没有被使用过的房间编号（使用子查询）
+1.查询没有被使用过的房间编号（使用子查询）（此题目可使用sqlfile/01.sql文件进行练习）
 　子查询或称内查询、嵌套查询，是一种嵌套在其他 SQL 查询的 WHERE 子句中的查询。
   答案:SELECT rno FROM guestroom where guestroom.rno NOT IN (SELECT rno FROM checkin)
   解析： where guestroom.rno NOT IN (SELECT rno FROM checkin)  筛选客房表中的rno属性不在（入住表中的rno属性）的值
