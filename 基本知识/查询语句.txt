@@ -4,4 +4,4 @@
   SELECT gname,gphone,days FROM guest,checkin where guest.gno=checkin.gno AND days>5
 查询一般语句：SELECT 查询的属性1,查询的属性2,或使用星号查询全部属性 FROM 查询的表1,查询的表2
 筛选查询：SELECT 查询的属性1,查询的属性2,或使用星号查询全部属性 FROM 查询的表1,查询的表2 WHENE 表.属性的值=表2属性的值 AND 属性>5
-解析：where guest.gno=checkin.gno 是为了筛选出guest表中的gno属性与checkin表中gno属性一致的值出来，也就是只留下有入住记录的顾客姓名与电话
+解析：where guest.gno=checkin.gno 是为了筛选出guest表中的gno属性与checkin表中gno属性一致的值出来，也就是只留下有入住记录的顾客姓名与电话，否则没有入住记录的顾客也会被筛选出来
