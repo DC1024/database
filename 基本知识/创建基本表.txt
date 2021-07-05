@@ -1,6 +1,8 @@
 教程：
-CREATE TABLE guestroom(rno CHAR(6) NOT NULL UNIQUE,rtype CHAR(20),rprice INT,PRIMARY KEY (rno))
-新建一个名为 guestroom（客房）的基本表，表中含有 rno(房间编号),rtype(房间类型),rprice(房间价格)三个属性。并设置主键为rno
+0.新建一个名为 guestroom（客房）的基本表，表中含有 rno(房间编号),rtype(房间类型),rprice(房间价格)三个属性。并设置主键为rno
+  CREATE TABLE guestroom(rno CHAR(6) NOT NULL UNIQUE,rtype CHAR(20),rprice INT,PRIMARY KEY (rno))
+新建语句一般格式：CREATE TABLE 表名(属性名 数据类型 可选填约束条件,属性名2 数据类型,属性名3 数据类型)
+
 
 数据类型：CHAR(size) 	保存固定长度的字符串（可包含字母、数字以及特殊字符）。在括号中指定字符串的长度。最多 255 个字符。如：CHAR(6) 意为定义该属性值可填入6个及以内的字母、数字以及特殊字符
 数据类型：INT.允许从 -2,147,483,648 到 2,147,483,647 的所有数字（整数）
