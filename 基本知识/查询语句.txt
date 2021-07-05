@@ -18,4 +18,5 @@
        
 3.查询每种商品累计采购的情况，包括商品编号，商品名称，总数量和总金额.
   答案:SELECT product.pno,pname,SUM(buysize) AS 总数量,SUM(buysize*buyprice) AS 总金额 FROM product,buy WHERE product.pno=buy.pno GROUP BY product.pno
-  解析：求总数量使用SUM将采购数量相加，并AS为总数量；求总金额，将采购数量与采购金额相乘，并AS为总金额。并将最后使用GROUP BY
+  解析：求总数量使用SUM将采购数量相加，并AS为总数量；求总金额，将采购数量与采购金额相乘，并AS为总金额。使用xx=xx形式分类产品（大概？）最后使用GROUP BY整理
+  GROUP BY用法：GROUP BY 属性名.可按照属性名将表中属性同值合并
