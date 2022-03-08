@@ -1,15 +1,36 @@
 教程：
-0.新建一个名为 guestroom（客房）的基本表，表中含有 rno(房间编号),rtype(房间类型),rprice(房间价格)三个属性。并设置主键为rno
-  CREATE TABLE guestroom(rno CHAR(6) NOT NULL UNIQUE,rtype CHAR(20),rprice INT,PRIMARY KEY (rno))
-新建语句一般格式：CREATE TABLE 表名(属性名 数据类型 可选填约束条件,属性名2 数据类型,属性名3 数据类型)
+示例.新建一个名为 guestroom（客房）的基本表，表中含有 rno(房间编号),rtype(房间类型),rprice(房间价格)三个属性。并设置主键为rno
+答.
+CREATE TABLE guestroom(
+   rno CHAR(6) NOT NULL UNIQUE,
+   rtype CHAR(20),
+   rprice INT,
+   PRIMARY KEY (rno)
+   );
 
+新建语句一般格式：
+CREATE TABLE 表名(属性名 数据类型 可选填约束条件,属性名2 数据类型,属性名3 数据类型)
 
-数据类型：CHAR(size) 	保存固定长度的字符串（可包含字母、数字以及特殊字符）。在括号中指定字符串的长度。最多 255 个字符。如：CHAR(6) 意为定义该属性值可填入6个及以内的字母、数字以及特殊字符
-数据类型：INT.允许从 -2,147,483,648 到 2,147,483,647 的所有数字（整数）
-约束：NOT NULL.属性不可为空
-约束：UNIQUE.属性值唯一
-约束：PRIMARY KEY (rno).设定rno为主键
-     https://www.w3school.com.cn/sql/sql_primarykey.asp
+例题中涉及的数据类型：
+CHAR(size)
+保存固定长度的字符串（可包含字母、数字以及特殊字符）
+在括号中指定字符串的长度。最多 255 个字符
+如：CHAR(6) 意为定义该属性值可填入6个及以内的字母、数字以及特殊字符
+
+INT
+允许从 -2,147,483,648 到 2,147,483,647 的所有数字（整数）
+
+约束：
+NOT NULL
+属性不可为空
+
+UNIQUE
+属性值唯一
+
+PRIMARY KEY (rno)
+设定rno为主键
+
+https://www.w3school.com.cn/sql/sql_primarykey.asp
      
 PS：1.属性必须定义数据类型;不建议使用ACCESS进行练习
     2.存储引擎MyISAM，无法进行外键设置。请将存储引擎设置为InnoDB
@@ -17,13 +38,48 @@ PS：1.属性必须定义数据类型;不建议使用ACCESS进行练习
 练习题
 1. 创建如下基本表，要求顾客编号限制在6个字符及以内，不可空且唯一；年龄，电话只可输入整数
    顾客(顾客编号,顾客姓名,年龄,电话)
-   标准答案：CREATE TABLE guest(gno CHAR(6) NOT NULL UNIQUE,gname CHAR(6),gage INT,gphone INT)
+标准答案
+   CREATE TABLE 顾客(
+      顾客编号 CHAR(6) NOT NULL UNIQUE,
+      顾客姓名 CHAR(6),
+      年龄 INT,电话 INT
+      );
+
+实际应用：
+   CREATE TABLE guest(
+      gno CHAR(6) NOT NULL UNIQUE,
+      gname CHAR(6),
+      gage INT,gphone INT
+      );
    
 1U.要求顾客编号限制在6个字符及以内，不可空且唯一；年龄只可输入整数；电话只可输入整数并在11位及以内.并设置主键
-   进阶答案：CREATE TABLE guest(gno CHAR(6) NOT NULL UNIQUE,gname CHAR(6),gage decimal(3,0),gphone decimal(11,0),PRIMARY KEY (gno))
+答案：
+CREATE TABLE guest(
+   gno CHAR(6) NOT NULL UNIQUE,
+   gname CHAR(6),
+   gage decimal(3,0),
+   gphone decimal(11,0),
+   PRIMARY KEY (gno)
+   );
    
-数据类型：decimal(p,s).固定精度和比例的数字。允许从 -10^38 +1 到 10^38 -1 之间的数字。p 参数指示可以存储的最大位数（小数点左侧和右侧）。p 必须是 1 到 38 之间的值。默认是 18。s 参数指示小数点右侧存储的最大位数。s 必须是 0 到 p 之间的值。默认是 0。如decimal(11,0)，意为可输入至数字11，可输入小数点至0（即为无）
+例题中涉及的数据类型：
+decimal(p,s)
+固定精度和比例的数字。
+允许从 -10^38 +1 到 10^38 -1 之间的数字。
+p 参数指示可以存储的最大位数（小数点左侧和右侧）。
+p 必须是 1 到 38 之间的值。默认是 18。
+s 参数指示小数点右侧存储的最大位数。
+s 必须是 0 到 p 之间的值。默认是 0。
+如decimal(11,0)，意为可输入至数字11，可输入小数点至0（即为无）
 
 2.创建如下基本表，要求设定房间编号与顾客编号为外键，入住天数只可输入整数
    入住(房间编号,顾客编号,入住日期,入住天数)
-   标准答案：CREATE TABLE checkin(rno CHAR(6),gno CHAR(6),day CHAR(10),days INT,FOREIGN KEY (rno) REFERENCES guestroom(rno),FOREIGN KEY (gno) REFERENCES guest(gno))
+   答案：
+   CREATE TABLE checkin(
+      rno CHAR(6),
+      gno CHAR(6),
+      day CHAR(10),
+      days INT,
+      FOREIGN KEY (rno) REFERENCES guestroom(rno),
+      FOREIGN KEY (gno) REFERENCES guest(gno)
+      );
